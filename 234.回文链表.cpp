@@ -18,7 +18,23 @@
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
+        stack<int> st;
+        auto sc = head;
+        while(sc) {
+            st.push(sc->val);
+            sc = sc->next;
+        }
 
+        auto cur = head;
+        while(cur) {
+            auto tmp = st.top();
+            if (cur->val == tmp) {
+                st.pop();
+                cur = cur->next;
+            } else return false;
+        }
+
+        return st.empty();
     }
 };
 // @lc code=end
