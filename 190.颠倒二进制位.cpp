@@ -9,6 +9,7 @@ class Solution {
 public:
     uint32_t reverseBits(uint32_t n) {
         uint32_t ans = 0;
+        // 每当n往右移动一位，res就向左移动一位
         for (int i = 0; i < 32; i ++) {
             ans = (n & 1) | (ans << 1);
             n >>= 1;
