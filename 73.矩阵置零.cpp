@@ -29,6 +29,7 @@ public:
 class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
+        // 空间O（1），用两个变量标记
         int m = matrix.size(), n = matrix[0].size();
         bool row0 =false, col0 = false;
         for (int i = 0; i < m; i ++ ) {
